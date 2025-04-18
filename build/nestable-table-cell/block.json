@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "competitor-review-blocks/nestable-table-cell",
+  "version": "0.1.0",
+  "title": "Nestable table cell",
+  "category": "widgets",
+  "icon": "block-default",
+  "description": "Example block scaffolded with Create Block tool.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "nestable-table-cell",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "parent": [
+    "competitor-review-blocks/nestable-table-row"
+  ]
+}

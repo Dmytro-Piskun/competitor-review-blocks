@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "competitor-review-blocks/nestable-table-row",
+  "version": "0.1.0",
+  "title": "Nestable Table Row",
+  "category": "widgets",
+  "icon": "block-default",
+  "description": "Example block scaffolded with Create Block tool.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "nestable-table-row",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "parent": [
+    "competitor-review-blocks/nestable-table"
+  ],
+  "usesContext": [
+    "nestable-table/columns"
+  ],
+  "attributes": {
+    "columns": {
+      "type": "number"
+    }
+  }
+}

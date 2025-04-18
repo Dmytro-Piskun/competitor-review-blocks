@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "competitor-review-blocks/rating-comparison",
+  "version": "0.1.0",
+  "title": "Rating Comparison",
+  "category": "widgets",
+  "icon": "block-default",
+  "description": "Rating comparison block",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "rating-comparison",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "image": "",
+          "overallRating": "4.5",
+          "ratings": [
+            {
+              "reviewer": "G2",
+              "rating": "4.5"
+            },
+            {
+              "reviewer": "Capterra",
+              "rating": "4.5"
+            },
+            {
+              "reviewer": "Trustpilot",
+              "rating": "4.5"
+            }
+          ],
+          "link": ""
+        },
+        {
+          "image": "",
+          "overallRating": "4.5",
+          "ratings": [
+            {
+              "reviewer": "G2",
+              "rating": "4.5"
+            },
+            {
+              "reviewer": "Capterra",
+              "rating": "4.5"
+            },
+            {
+              "reviewer": "Trustpilot",
+              "rating": "4.5"
+            }
+          ],
+          "link": ""
+        }
+      ]
+    }
+  }
+}

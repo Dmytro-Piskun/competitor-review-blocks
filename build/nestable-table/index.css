@@ -1,0 +1,28 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/nestable-table/editor.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.competitor-review-table {
+  padding: 20px 0 50px;
+}
+.competitor-review-table-instruction {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.competitor-review-table-row {
+  border-left: 10px solid #d6dedf;
+  min-height: 100px;
+}
+.competitor-review-table-row:nth-child(2n) {
+  border-left: 10px solid #f5f5f5;
+}
+.competitor-review-table-row:nth-child(1) {
+  border-left: 10px solid #f8dfcf;
+}
+.competitor-review-table-row:first-child .competitor-review-table-row-cell {
+  border-top: solid 1px #CCCCCC;
+}
+.competitor-review-table-row:last-child .competitor-review-table-row-cell {
+  border-bottom: solid 1px #CCCCCC;
+}
+
+/*# sourceMappingURL=index.css.map*/

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "competitor-review-blocks/comparisons",
+  "version": "0.1.0",
+  "title": "Comparisons",
+  "category": "widgets",
+  "icon": "block-default",
+  "description": "Comparisons block",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "comparisons",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "image1": "",
+          "image2": "",
+          "link": ""
+        },
+        {
+          "image1": "",
+          "image2": "",
+          "link": ""
+        },
+        {
+          "image1": "",
+          "image2": "",
+          "link": ""
+        }
+      ]
+    }
+  }
+}

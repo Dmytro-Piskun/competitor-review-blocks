@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "competitor-review-blocks/pros-and-cons",
+	"version": "0.1.0",
+	"title": "Pros And Cons",
+	"category": "widgets",
+	"icon": "list-view",
+	"description": "A block for pros and cons list.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "pros-and-cons",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"pros": {
+		  "type": "string",
+		  "default": ""
+		},
+		"cons": {
+		  "type": "string",
+		  "default": "" 
+		}
+	  }
+}

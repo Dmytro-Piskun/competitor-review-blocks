@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "competitor-review-blocks/review-carousel",
+  "version": "0.1.0",
+  "title": "Review Carousel",
+  "category": "widgets",
+  "icon": "block-default",
+  "description": "Carousel for reviews",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "review-carousel",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "globalHeading": {
+      "type": "string",
+      "default": "What people say about Sender"
+    },
+    "cards": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "reviewSource": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "number"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

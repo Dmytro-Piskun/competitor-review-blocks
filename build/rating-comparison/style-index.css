@@ -1,0 +1,242 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/rating-comparison/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+.competitor-review-rating-comparison {
+  color: #0A083B;
+  display: flex;
+  gap: 32px;
+}
+.competitor-review-rating-comparison .competitor-review-rating-comparison-card {
+  flex-grow: 1;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #F8F3F0;
+  padding: 24px;
+}
+.competitor-review-rating-comparison-logo {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.competitor-review-rating-comparison-border {
+  border-bottom: solid #CCCCCC 1px;
+}
+.competitor-review-rating-comparison-rating-container {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.competitor-review-rating-comparison-rating-header {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 40px;
+}
+.competitor-review-rating-comparison-rating-overall-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.competitor-review-rating-comparison-rating-overall {
+  display: flex;
+  padding: 4px 12px;
+  line-height: 26px;
+  background-color: white;
+  border-radius: 9999px;
+  border: #CCCCCC solid 1px;
+  align-items: center;
+  gap: 12px;
+}
+.competitor-review-rating-comparison-rating-overall > :first-child {
+  display: flex;
+}
+.competitor-review-rating-comparison-rating-overall > :first-child > :first-child {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--primary);
+}
+.competitor-review-rating-comparison-rating-overall > :first-child > :last-child {
+  position: relative;
+  top: 3px;
+  font-weight: 400;
+  font-size: 14px;
+  left: 4px;
+  color: var(--txt-grey);
+}
+.competitor-review-rating-comparison-rating-overall > :last-child {
+  width: 20px;
+  height: 20px;
+}
+.competitor-review-rating-comparison-rating-list {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.competitor-review-rating-comparison-rating-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.competitor-review-rating-comparison-rating-list-item > :first-child {
+  color: gray;
+  font-weight: 400;
+  font-size: 16px;
+}
+.competitor-review-rating-comparison-rating-list-item > :last-child {
+  background-color: white;
+  border-radius: 9999px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #CCCCCC;
+}
+.competitor-review-rating-comparison-rating-list-item > :last-child > :first-child {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+}
+.competitor-review-rating-comparison-rating-list-item > :last-child > :last-child {
+  width: 16px;
+  height: 16px;
+}
+.competitor-review-rating-comparison-rating-link {
+  text-align: center;
+}
+.competitor-review-rating-comparison-rating-link a {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px orange solid;
+  padding-bottom: 6px;
+  text-decoration: none;
+}
+.competitor-review-rating-comparison-rating-link a .btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.competitor-review-rating-comparison-rating-link a .btn-icon .svg-icon {
+  width: 15px;
+  height: 15px;
+}
+.competitor-review-rating-comparison-rating-link a .btn-icon .svg-icon:last-child {
+  display: none;
+}
+
+/*
+
+ &__rating {
+        flex-basis: 50%;
+
+
+        @include breakpoint('lg') {
+
+            gap: 20px;
+
+        }
+
+
+        &-header {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 40px;
+        }
+
+        &-overall-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-overall {
+
+            display: flex;
+            line-height: 40px;
+
+            &> :first-child {
+                font-weight: 600;
+                font-size: 36px;
+                color: var(--primary);
+            }
+
+            &> :last-child {
+                position: relative;
+                top: 7px;
+                font-weight: 400;
+                font-size: 16px;
+                left: 4px;
+                color: var(--txt-grey);
+            }
+
+        }
+
+        &-list {
+            display: flex;
+            gap: 8px;
+            flex-direction: column;
+
+            &-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &>:first-child {
+                    color: var(--txt-grey);
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+
+                &>:last-child {
+
+                    background-color: var(--white);
+                    border-radius: 9999px;
+                    padding: 8px 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 9px;
+                    border: 1px solid #CCCCCC;
+
+                    >:first-child {
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 17px;
+                    }
+
+                    >:last-child {
+                        width: 16px;
+                        height: 16px;
+                    }
+
+
+                }
+
+            }
+        }
+
+        &-link {
+
+            text-align: center;
+
+            a {
+                width: 100%;
+                font-size: 14px;
+            }
+
+        }
+    }
+
+
+*/
+
+/*# sourceMappingURL=style-index.css.map*/

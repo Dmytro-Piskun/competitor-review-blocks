@@ -1,0 +1,50 @@
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/comparisons/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+.competitor-review-comparisons {
+  color: #0A083B;
+  display: flex;
+  gap: 32px;
+}
+.competitor-review-comparisons-item {
+  background-color: #F8F3F0;
+  padding: 0 24px 24px 24px;
+  border-radius: 6px;
+  flex-basis: 33%;
+}
+.competitor-review-comparisons-item-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+.competitor-review-comparisons-item-header img {
+  width: 81px;
+}
+.competitor-review-comparisons-item-link a {
+  width: 100%;
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px orange solid;
+  padding-bottom: 6px;
+  text-decoration: none;
+}
+.competitor-review-comparisons-item-link a .btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.competitor-review-comparisons-item-link a .btn-icon .svg-icon {
+  width: 15px;
+  height: 15px;
+}
+.competitor-review-comparisons-item-link a .btn-icon .svg-icon:last-child {
+  display: none;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

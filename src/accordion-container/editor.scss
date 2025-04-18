@@ -1,0 +1,11 @@
+.competitor-review-accordion-container {
+	border: 1px dotted #ccc;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	&>div:first-child{
+		text-align: center;
+	}
+}

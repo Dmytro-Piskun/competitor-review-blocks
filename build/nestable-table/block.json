@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "competitor-review-blocks/nestable-table",
+  "version": "0.1.0",
+  "title": "Nestable Table",
+  "category": "widgets",
+  "icon": "block-default",
+  "description": "Table that allows nesting other blocks",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "nestable-table",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "columns": {
+      "type": "number",
+      "default": "2"
+    },
+    "rows": {
+      "type": "number",
+      "default": "2"
+    },
+    "buttonsRow": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "providesContext": {
+    "nestable-table/columns": "columns"
+  }
+}

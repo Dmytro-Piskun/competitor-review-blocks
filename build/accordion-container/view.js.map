@@ -1,0 +1,1 @@
+{"version":3,"file":"accordion-container/view.js","mappings":";;;;AAEAA,OAAO,CAACC,GAAG,CACV,mEACD,CAAC,C","sources":["webpack://competitor-review-blocks/./src/accordion-container/view.js"],"sourcesContent":["\n\nconsole.log(\n\t'Hello World! (from accordion-container-accordion-container block)'\n);\n\n"],"names":["console","log"],"sourceRoot":""}
