@@ -39,14 +39,14 @@ function Edit({
   setAttributes
 }) {
   const {
-    cards
+    cards = []
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
     className: "competitor-review-comparisons"
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: attributes.cards.map((card, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      children: cards.map((card, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
         title: `Card ${index + 1}`,
         initialOpen: index === 0,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
@@ -55,8 +55,11 @@ function Edit({
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
               onSelect: media => {
-                const newCards = [...attributes.cards];
-                newCards[index].image1 = media.url;
+                const newCards = [...cards];
+                newCards[index] = {
+                  ...newCards[index],
+                  image1: media.url
+                };
                 setAttributes({
                   cards: newCards
                 });
@@ -66,7 +69,6 @@ function Edit({
                 open
               }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
                 onClick: open,
-                isSecondary: true,
                 children: card.image1 ? 'Change Image 1' : 'Upload Image 1'
               })
             })
@@ -77,8 +79,11 @@ function Edit({
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
               onSelect: media => {
-                const newCards = [...attributes.cards];
-                newCards[index].image2 = media.url;
+                const newCards = [...cards];
+                newCards[index] = {
+                  ...newCards[index],
+                  image2: media.url
+                };
                 setAttributes({
                   cards: newCards
                 });
@@ -88,7 +93,6 @@ function Edit({
                 open
               }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
                 onClick: open,
-                isSecondary: true,
                 children: card.image2 ? 'Change Image 2' : 'Upload Image 2'
               })
             })
@@ -99,7 +103,7 @@ function Edit({
           label: "Link",
           value: card.link,
           onChange: val => {
-            const newCards = [...attributes.cards];
+            const newCards = [...cards];
             newCards[index].link = val;
             setAttributes({
               cards: newCards
@@ -114,23 +118,23 @@ function Edit({
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "competitor-review-comparisons-item-header",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: card.image1,
+            src: card.image1 || '',
             alt: `Logo 1`
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
             children: "X"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: card.image2,
+            src: card.image2 || '',
             alt: `Logo 2`
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          class: "competitor-review-comparisons-item-link",
+          className: "competitor-review-comparisons-item-link",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
-            href: card.link,
-            class: "btn btn-lg nacked-btn",
-            children: ["See comaparison", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
-              class: "btn-icon",
+            href: card.link || '#',
+            className: "btn btn-lg nacked-btn",
+            children: ["See comparison", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+              className: "btn-icon",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
-                class: "svg-icon",
+                className: "svg-icon",
                 viewBox: "0 0 16 14",
                 fill: "none",
                 xmlns: "http://www.w3.org/2000/svg",
@@ -139,7 +143,7 @@ function Edit({
                   fill: "currentColor"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
-                class: "svg-icon",
+                className: "svg-icon",
                 viewBox: "0 0 16 14",
                 fill: "none",
                 xmlns: "http://www.w3.org/2000/svg",
@@ -244,7 +248,7 @@ function save({
   attributes
 }) {
   const {
-    cards
+    cards = []
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
     className: "competitor-review-comparisons"
@@ -256,23 +260,23 @@ function save({
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "competitor-review-comparisons-item-header",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          src: card.image1,
+          src: card.image1 || "",
           alt: `Logo 1`
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
           children: "X"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          src: card.image2,
+          src: card.image2 || "",
           alt: `Logo 2`
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        class: "competitor-review-comparisons-item-link",
+        className: "competitor-review-comparisons-item-link",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-          href: card.link,
-          class: "btn btn-lg nacked-btn",
-          children: ["See comaparison", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-            class: "btn-icon",
+          href: card.link || '#',
+          className: "btn btn-lg nacked-btn",
+          children: ["See comparison", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+            className: "btn-icon",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-              class: "svg-icon",
+              className: "svg-icon",
               viewBox: "0 0 16 14",
               fill: "none",
               xmlns: "http://www.w3.org/2000/svg",
@@ -281,7 +285,7 @@ function save({
                 fill: "currentColor"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-              class: "svg-icon",
+              className: "svg-icon",
               viewBox: "0 0 16 14",
               fill: "none",
               xmlns: "http://www.w3.org/2000/svg",
