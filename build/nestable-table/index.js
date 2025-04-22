@@ -55,9 +55,9 @@ function Edit({
   const [columnsAmount, setColumsAmount] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(columns);
   const [rowsAmount, setRowAmount] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(rows);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
-    className: "competitor-review-table",
-    'data-has-buttons-row': buttonsRow
+    className: "competitor-review-table-wrapper"
   });
+  console.log('blockProps:', blockProps);
   const {
     replaceInnerBlocks
   } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)('core/block-editor');
@@ -119,16 +119,17 @@ function Edit({
           })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       ...blockProps,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "competitor-review-table-instruction",
-        children: "Insert table rows below"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {
-        templateLock: false,
-        template: defaultTemplate,
-        allowedBlocks: ['competitor-review-blocks/nestable-table-row']
-      })]
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "competitor-review-table",
+        "data-has-buttons-row": buttonsRow,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {
+          templateLock: false,
+          template: defaultTemplate,
+          allowedBlocks: ['competitor-review-blocks/nestable-table-row']
+        })
+      })
     })]
   });
 }
@@ -224,12 +225,15 @@ function save({
     buttonsRow
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
-    className: "competitor-review-table",
-    'data-has-buttons-row': buttonsRow
+    className: "competitor-review-table-wrapper"
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     ...blockProps,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks.Content, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "competitor-review-table",
+      "data-has-buttons-row": buttonsRow,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks.Content, {})
+    })
   });
 }
 

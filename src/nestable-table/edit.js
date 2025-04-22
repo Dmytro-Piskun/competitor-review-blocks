@@ -24,9 +24,10 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	const [rowsAmount, setRowAmount] = useState(rows);
 
 	const blockProps = useBlockProps({
-		className: "competitor-review-table",
-		'data-has-buttons-row': buttonsRow
-	});
+		className: "competitor-review-table-wrapper",
+	})
+
+	console.log('blockProps:', blockProps);
 
 	const { replaceInnerBlocks } = useDispatch('core/block-editor');
 
@@ -100,16 +101,18 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			</InspectorControls>
 
 			<div {...blockProps}>
-				<div className='competitor-review-table-instruction'>
+				{/* <div className='competitor-review-table-instruction'>
 					Insert table rows below
+				</div> */}
+				<div className='competitor-review-table' data-has-buttons-row={buttonsRow}>
+					<InnerBlocks
+						templateLock={false}
+						template={defaultTemplate}
+						allowedBlocks={['competitor-review-blocks/nestable-table-row']}
+					/>
 				</div>
-
-				<InnerBlocks
-					templateLock={false}
-					template={defaultTemplate}
-					allowedBlocks={['competitor-review-blocks/nestable-table-row']}
-				/>
 			</div>
+
 		</>
 	);
 }
