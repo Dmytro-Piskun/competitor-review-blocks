@@ -37,8 +37,8 @@ export default function save({attributes}) {
 														</svg>
 													</span>
 												</div>
-												<div className="reviews__source">
-													<img src={card.reviewSource} alt="Badge" />
+												<div className="reviews__source">													
+														{card.reviewSource}													
 												</div>
 											</div>
 											<div className="reviews__author">

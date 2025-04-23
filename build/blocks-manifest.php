@@ -94,6 +94,30 @@ return array(
 			)
 		)
 	),
+	'cons-heading' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'competitor-review-blocks/cons-heading',
+		'version' => '0.1.0',
+		'title' => 'Cons Heading',
+		'category' => 'widgets',
+		'icon' => 'block-default',
+		'description' => 'Cons heading',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'cons-heading',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js',
+		'parent' => array(
+			'competitor-review-blocks/nestable-table-cell'
+		)
+	),
 	'nestable-table' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -245,6 +269,30 @@ return array(
 				'type' => 'string',
 				'default' => ''
 			)
+		)
+	),
+	'pros-heading' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'competitor-review-blocks/pros-heading',
+		'version' => '0.1.0',
+		'title' => 'Pros Heading',
+		'category' => 'widgets',
+		'icon' => 'block-default',
+		'description' => 'Pros heading',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'pros-heading',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js',
+		'parent' => array(
+			'competitor-review-blocks/nestable-table-cell'
 		)
 	),
 	'rating-comparison' => array(

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "competitor-review-blocks/cons-heading",
+  "version": "0.1.0",
+  "title": "Cons Heading",
+  "category": "widgets",
+  "icon": "block-default",
+  "description": "Cons heading",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "cons-heading",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "parent": [
+    "competitor-review-blocks/nestable-table-cell"
+  ]
+}

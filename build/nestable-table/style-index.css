@@ -77,6 +77,20 @@
 .competitor-review-table-wrapper .competitor-review-table ul li::before {
   margin-top: 8px;
 }
+.competitor-review-table-wrapper .competitor-review-table .competitor-review-pros-and-cons-heading {
+  font-size: 16px;
+  line-height: 26px;
+  color: #0A083B;
+  margin-bottom: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.competitor-review-table-wrapper .competitor-review-table .competitor-review-pros-and-cons-heading > img {
+  width: 16px;
+  height: 16px;
+}
 .competitor-review-table-wrapper[data-has-buttons-row=true] .competitor-review-table-row:nth-last-child(2) .competitor-review-table-row-cell:first-child {
   border-bottom-left-radius: 6px;
 }

@@ -10,7 +10,8 @@ import {
 	Button,
 	__experimentalSpacer as Spacer,
 	Flex,
-	TextareaControl
+	TextareaControl,
+	SelectControl
 } from '@wordpress/components';
 import {
 	plus,
@@ -106,7 +107,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 
 							<Spacer marginBottom={2} />
-							<MediaUploadCheck>
+							{/* <MediaUploadCheck>
 								<MediaUpload
 									onSelect={(media) =>
 										updateCard(index, 'reviewSource', media.url)
@@ -118,7 +119,18 @@ export default function Edit({ attributes, setAttributes }) {
 										</Button>
 									)}
 								/>
-							</MediaUploadCheck>
+							</MediaUploadCheck> */}
+							<SelectControl
+								label="Reviewer"
+								value={card.reviewSource}
+								options={[
+									{ value: '', label: 'Select a Reviewer', disabled: true },
+									{ value: 'G', label: 'G2' },
+									{ value: 'Capterra', label: 'Capterra' },
+									{ value: 'Trustpilot', label: 'Trustpilot' },
+								]}
+								onChange={(val) => updateCard(index, 'reviewSource', val)}
+							/>
 
 							<Spacer marginBottom={2} />
 							<TextControl
@@ -190,14 +202,14 @@ export default function Edit({ attributes, setAttributes }) {
 
 						<div className="swiper-wrapper">
 
-							{cards.length === 0 && "No cards added" }
+							{cards.length === 0 && "No cards added"}
 							{cards.map((card, index) => (
 								<div key={index} className="swiper-slide">
 									<div className="reviews__card">
 										<div className="reviews__card-header">
 											<img src={card.avatar} className="reviews__avatar" alt={`avatar`} />
 
-											<div className="d-block w-100" style={{width:"100%"}}>
+											<div className="d-block w-100" style={{ width: "100%" }}>
 												<div className="reviews__rating-container">
 													<div className="reviews__rating">
 														<span className="reviews__score">{card.rating}</span>
@@ -208,7 +220,7 @@ export default function Edit({ attributes, setAttributes }) {
 														</span>
 													</div>
 													<div className="reviews__source">
-														<img src={card.reviewSource} alt="Badge" />
+														{card.reviewSource}
 													</div>
 												</div>
 												<div className="reviews__author">
