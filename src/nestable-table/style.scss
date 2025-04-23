@@ -1,65 +1,157 @@
-.competitor-review-table {
+.competitor-review-table-wrapper {
 
-	border-radius: 6px;
-	border: solid 1px #CCCCCC;
+	width: 100%;
 	overflow: hidden;
 	overflow-x: auto;
 
-	&-row {
-		display: grid;
+	.competitor-review-table {
 
-		&-cell {
-			padding: 16px 12px;
-			min-width: 125px;
-			border-right: 1px solid #CCCCCC;
-			border-bottom: 1px solid #CCCCCC;
 
+
+		min-width: fit-content;
+
+		&-row {
+			display: grid;
+
+			&-cell {
+				padding: 16px 12px;
+				min-width: 125px;
+				border-right: 1px solid #CCCCCC;
+				border-bottom: 1px solid #CCCCCC;
+
+				&:first-child {
+					p {
+						color: #0A083B;
+						line-height: 26px;
+					}
+
+					border-left: 1px solid #CCCCCC;
+
+				}
+
+			}
+
+			&:nth-child(odd) {
+
+				background-color: #CCCCCC1A;
+
+			}
+
+			&:first-child {
+
+				background-color: #F8F3F0;
+
+				.competitor-review-table-row-cell {
+
+					p {
+						color: #0A083B;
+						font-weight: 600;
+						line-height: 21px;
+					}
+
+					border-top: 1px solid #CCCCCC;
+
+					&:first-child {
+						border-top-left-radius: 6px;
+					}
+
+					&:last-child {
+						border-top-right-radius: 6px;
+					}
+				}
+
+			}
 
 			&:last-child {
-				border-right: none;
+				.competitor-review-table-row-cell {
+
+					&:first-child {
+						border-bottom-left-radius: 6px;
+					}
+
+					&:last-child {
+						border-bottom-right-radius: 6px;
+					}
+				}
+			}
+
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 26px;
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 26px;
+		}
+
+		ul {
+
+			gap: 4px;
+
+			li {
+				font-size: 16px;
+				line-height: 26px;
+				margin-top: 0px;
+
+				&::before {
+					margin-top: 8px;
+				}
 			}
 		}
 
-		&:last-child &-cell {
 
-			border-bottom: none;
-
-		}
-
-		&:nth-child(odd) {
-
-			background-color: #CCCCCC1A;
-
-		}
-
-		&:first-child {
-			background-color: #F8F3F0;
-		}
 
 	}
 
 	&[data-has-buttons-row="true"] {
-		& .competitor-review-table-row:last-child {
-			background-color: aqua;
+		.competitor-review-table {
+
+			&-row {
+
+				&:nth-last-child(2) {
+
+					.competitor-review-table-row-cell {
+
+						&:first-child {
+							border-bottom-left-radius: 6px;
+						}
+
+						&:last-child {
+							border-bottom-right-radius: 6px;
+						}
+					}
+
+				}
+
+				&:last-child {
+
+					background-color: transparent;
+
+					.competitor-review-table-row-cell {
+
+						border: none;
+
+						&:first-child {
+							border-bottom-left-radius: 0px;
+						}
+
+						&:last-child {
+							border-bottom-right-radius: 0px;
+						}
+					}
+				}
+
+			}
+
 		}
 	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-weight: 600;
-		font-size: 16px;
-		line-height: 26px;
-	}
-
-	p {
-		font-size: 16px;
-		line-height: 26px;
-
-	}
-
-
 }

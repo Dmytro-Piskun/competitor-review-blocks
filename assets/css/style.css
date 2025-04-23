@@ -1,0 +1,52 @@
+main h2 {
+	color: #0a083b;
+	font-weight: 600;
+	font-size: 44px;
+	line-height: 54px;
+	margin-bottom: 32px;
+}
+
+main h3 {
+	color: #0a083b;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 40px;
+	margin-bottom: 20px;
+}
+
+main p {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 32px;
+	color: #5a5a66;
+	margin: 0;
+}
+
+main ul {
+	font-weight: 400;
+	font-size: 20px;
+	color: #5a5a66;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 0;
+	margin: 0;
+}
+
+main ul li {
+	display: flex;
+}
+
+main ul li::before {
+	content: "";
+	background-color: orangered;
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border-radius: 2px;
+	margin-top: 11px;
+	margin-right: 17px;
+	margin-left: 4px;
+	flex-shrink: 0;
+	line-height: 32px;
+}

@@ -132,6 +132,38 @@ return array(
 			'nestable-table/columns' => 'columns'
 		)
 	),
+	'nestable-table-button' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'competitor-review-blocks/nestable-table-button',
+		'version' => '0.1.0',
+		'title' => 'Nestable Table Button',
+		'category' => 'widgets',
+		'icon' => 'block-default',
+		'description' => 'Button for nestable table',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'nestable-table-button',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js',
+		'parent' => array(
+			'competitor-review-blocks/nestable-table-cell'
+		),
+		'attributes' => array(
+			'title' => array(
+				'type' => 'string'
+			),
+			'link' => array(
+				'type' => 'string'
+			)
+		)
+	),
 	'nestable-table-cell' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,

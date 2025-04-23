@@ -1,0 +1,21 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/nestable-table-button/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.competitor-review-nestable-table-button {
+  display: block;
+  color: #0A083B;
+  border-radius: 9999px;
+  padding: 8px 0;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #0A083B;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 32px;
+  cursor: pointer;
+  text-decoration: none;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

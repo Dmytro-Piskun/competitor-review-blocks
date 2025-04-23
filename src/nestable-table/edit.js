@@ -24,7 +24,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	const [rowsAmount, setRowAmount] = useState(rows);
 
 	const blockProps = useBlockProps({
-		className: "competitor-review-table",
+		className: "competitor-review-table-wrapper",
 		'data-has-buttons-row': buttonsRow
 	});
 
@@ -104,11 +104,16 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 					Insert table rows below
 				</div>
 
-				<InnerBlocks
-					templateLock={false}
-					template={defaultTemplate}
-					allowedBlocks={['competitor-review-blocks/nestable-table-row']}
-				/>
+				<div className='competitor-review-table'>
+
+					<InnerBlocks
+						templateLock={false}
+						template={defaultTemplate}
+						allowedBlocks={['competitor-review-blocks/nestable-table-row']}
+					/>
+
+				</div>
+
 			</div>
 		</>
 	);
