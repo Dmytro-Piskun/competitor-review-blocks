@@ -129,7 +129,32 @@ return array(
 			)
 		),
 		'providesContext' => array(
-			'nestable-table/columns' => 'columns'
+			'nestable-table/columns' => 'columns',
+			'nestable-table/rows' => 'rows'
+		)
+	),
+	'nestable-table-button-row' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'competitor-review-blocks/nestable-table-buttons-row',
+		'version' => '0.1.0',
+		'title' => 'Nestable Table Button Row',
+		'category' => 'widgets',
+		'icon' => 'block-default',
+		'description' => 'Container for buttons row',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'nestable-table-button-row',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js',
+		'parent' => array(
+			'competitor-review-blocks/nestable-table'
 		)
 	),
 	'nestable-table-cell' => array(
@@ -186,6 +211,30 @@ return array(
 			'columns' => array(
 				'type' => 'number'
 			)
+		)
+	),
+	'nestable-table-rows' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'competitor-review-blocks/nestable-table-rows',
+		'version' => '0.1.0',
+		'title' => 'Nestable Table Rows container',
+		'category' => 'widgets',
+		'icon' => 'block-default',
+		'description' => 'Container for rows of the table',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'nestable-table-rows',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js',
+		'parent' => array(
+			'competitor-review-blocks/nestable-table'
 		)
 	),
 	'pros-and-cons' => array(

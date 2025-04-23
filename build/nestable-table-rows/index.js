@@ -2,20 +2,20 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/nestable-table/block.json":
-/*!***************************************!*\
-  !*** ./src/nestable-table/block.json ***!
-  \***************************************/
+/***/ "./src/nestable-table-rows/block.json":
+/*!********************************************!*\
+  !*** ./src/nestable-table-rows/block.json ***!
+  \********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"competitor-review-blocks/nestable-table","version":"0.1.0","title":"Nestable Table","category":"widgets","icon":"block-default","description":"Table that allows nesting other blocks","example":{},"supports":{"html":false},"textdomain":"nestable-table","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"columns":{"type":"number","default":"2"},"rows":{"type":"number","default":"2"},"buttonsRow":{"type":"boolean","default":false}},"providesContext":{"nestable-table/columns":"columns","nestable-table/rows":"rows"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"competitor-review-blocks/nestable-table-rows","version":"0.1.0","title":"Nestable Table Rows container","category":"widgets","icon":"block-default","description":"Container for rows of the table","example":{},"supports":{"html":false},"textdomain":"nestable-table-rows","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","parent":["competitor-review-blocks/nestable-table"]}');
 
 /***/ }),
 
-/***/ "./src/nestable-table/edit.js":
-/*!************************************!*\
-  !*** ./src/nestable-table/edit.js ***!
-  \************************************/
+/***/ "./src/nestable-table-rows/edit.js":
+/*!*****************************************!*\
+  !*** ./src/nestable-table-rows/edit.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -32,10 +32,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/nestable-table/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/nestable-table-rows/editor.scss");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
-
 
 
 
@@ -48,138 +47,34 @@ function Edit({
   setAttributes,
   clientId
 }) {
-  const {
-    columns,
-    rows,
-    buttonsRow
-  } = attributes;
-  const [columnsAmount, setColumsAmount] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(columns);
-  const [rowsAmount, setRowAmount] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(rows);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
-    className: "competitor-review-table",
-    'data-has-buttons-row': buttonsRow
+    className: "competitor-review-table-rows"
+    // 'data-has-buttons-row': buttonsRow
   });
-  const {
-    getBlocks
-  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => ({
-    getBlocks: select(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.store).getBlocks(clientId)
-  }));
-  const {
-    insertBlock,
-    removeBlock
-  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.store);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
-    console.log("test", buttonsRow);
-    const blocks = getBlocks;
-    const lastBlock = blocks[blocks.length - 1];
-    const buttonRowBlock = blocks.find(block => block.name === 'competitor-review-blocks/nestable-table-buttons-row');
-    if (buttonsRow) {
-      if (!buttonRowBlock) {
-        const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__.createBlock)('competitor-review-blocks/nestable-table-buttons-row');
-        insertBlock(newBlock, blocks.length, clientId);
-      } else {
-        if (lastBlock?.clientId !== buttonRowBlock.clientId) {
-          removeBlock(buttonRowBlock.clientId);
-          insertBlock(buttonRowBlock, blocks.length, clientId);
-        }
-      }
-    } else {
-      if (buttonRowBlock) {
-        removeBlock(buttonRowBlock.clientId);
-      }
-    }
-  }, [buttonsRow, getBlocks]);
 
-  //move to rows block 
+  // const defaultTemplate = [
 
-  // const { replaceInnerBlocks } = useDispatch('core/block-editor');
+  // 	['competitor-review-blocks/nestable-table-row'],
+  // 	['competitor-review-blocks/nestable-table-row']
 
-  // const generateTableTemplate = () => {
-  // 	const template = [];
+  // ]
 
-  // 	for (let r = 0; r < rowsAmount; r++) {
-  // 		template.push(['competitor-review-blocks/nestable-table-row']);
-  // 	}
-
-  // 	return template;
-  // };
-
-  // const newTemplate = generateTableTemplate();
-  // 	const newBlocks = createBlocksFromInnerBlocksTemplate(newTemplate);
-  // 	replaceInnerBlocks(clientId, newBlocks, false);
-
-  //move to rows block 
-
-  const generateTable = () => {
-    setAttributes({
-      columns: parseInt(columnsAmount),
-      rows: parseInt(rowsAmount)
-    });
-  };
-  const defaultTemplate = [['competitor-review-blocks/nestable-table-rows']
-  // ['competitor-review-blocks/nestable-table-buttons-row']
-  ];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-        title: "Table Settings",
-        initialOpen: true,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
-          marginBottom: 4
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-            label: "Columns",
-            type: "number",
-            value: columnsAmount,
-            onChange: val => setColumsAmount(val)
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
-          marginBottom: 4
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-            label: "Rows",
-            type: "number",
-            value: rowsAmount,
-            onChange: val => setRowAmount(val)
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
-          marginBottom: 8
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-          variant: "primary",
-          onClick: generateTable,
-          children: "Confirm changes"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
-          marginBottom: 8
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-            label: "Make Last Row A Buttons Row",
-            checked: buttonsRow,
-            onChange: val => setAttributes({
-              buttonsRow: val
-            })
-          })
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      ...blockProps,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "competitor-review-table-instruction",
-        children: "Insert table rows below"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {
-        templateLock: false,
-        template: defaultTemplate,
-        allowedBlocks: ['competitor-review-blocks/nestable-table-row', 'competitor-review-blocks/nestable-table-buttons-row']
-      })]
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    ...blockProps,
+    children: ["yo", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks
+    // templateLock={false}
+    // template={defaultTemplate}
+    // allowedBlocks={['competitor-review-blocks/nestable-table-row']}
+    , {})]
   });
 }
 
 /***/ }),
 
-/***/ "./src/nestable-table/editor.scss":
-/*!****************************************!*\
-  !*** ./src/nestable-table/editor.scss ***!
-  \****************************************/
+/***/ "./src/nestable-table-rows/editor.scss":
+/*!*********************************************!*\
+  !*** ./src/nestable-table-rows/editor.scss ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -188,19 +83,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/nestable-table/index.js":
-/*!*************************************!*\
-  !*** ./src/nestable-table/index.js ***!
-  \*************************************/
+/***/ "./src/nestable-table-rows/index.js":
+/*!******************************************!*\
+  !*** ./src/nestable-table-rows/index.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/nestable-table/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/nestable-table/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/nestable-table/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/nestable-table/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/nestable-table-rows/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/nestable-table-rows/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/nestable-table-rows/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/nestable-table-rows/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -242,10 +137,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/nestable-table/save.js":
-/*!************************************!*\
-  !*** ./src/nestable-table/save.js ***!
-  \************************************/
+/***/ "./src/nestable-table-rows/save.js":
+/*!*****************************************!*\
+  !*** ./src/nestable-table-rows/save.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -276,10 +171,10 @@ function save({
 
 /***/ }),
 
-/***/ "./src/nestable-table/style.scss":
-/*!***************************************!*\
-  !*** ./src/nestable-table/style.scss ***!
-  \***************************************/
+/***/ "./src/nestable-table-rows/style.scss":
+/*!********************************************!*\
+  !*** ./src/nestable-table-rows/style.scss ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -458,8 +353,8 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"nestable-table/index": 0,
-/******/ 			"nestable-table/style-index": 0
+/******/ 			"nestable-table-rows/index": 0,
+/******/ 			"nestable-table-rows/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -509,7 +404,7 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["nestable-table/style-index"], () => (__webpack_require__("./src/nestable-table/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["nestable-table-rows/style-index"], () => (__webpack_require__("./src/nestable-table-rows/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
