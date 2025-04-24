@@ -8,7 +8,7 @@
   \******************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"competitor-review-blocks/rating-comparison","version":"0.1.0","title":"Rating Comparison","category":"widgets","icon":"block-default","description":"Rating comparison block","example":{},"supports":{"html":false},"textdomain":"rating-comparison","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"cards":{"type":"array","default":[{"image":"","overallRating":"4.5","ratings":[{"reviewer":"G2","rating":"4.5"},{"reviewer":"Capterra","rating":"4.5"},{"reviewer":"Trustpilot","rating":"4.5"}],"link":""},{"image":"","overallRating":"4.5","ratings":[{"reviewer":"G2","rating":"4.5"},{"reviewer":"Capterra","rating":"4.5"},{"reviewer":"Trustpilot","rating":"4.5"}],"link":""}]}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"competitor-review-blocks/rating-comparison","version":"0.1.0","title":"Rating Comparison","category":"widgets","icon":"block-default","description":"Rating comparison block","example":{},"supports":{"html":false},"textdomain":"rating-comparison","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"cards":{"type":"array","default":[{"image":"","overallRating":"4.5","ratings":[{"reviewer":"G2","rating":"4.5"},{"reviewer":"Capterra","rating":"4.5"},{"reviewer":"Trustpilot","rating":"4.5"}],"link":"","target":""},{"image":"","overallRating":"4.5","ratings":[{"reviewer":"G2","rating":"4.5"},{"reviewer":"Capterra","rating":"4.5"},{"reviewer":"Trustpilot","rating":"4.5"}],"link":"","target":""}]}}}');
 
 /***/ }),
 
@@ -103,6 +103,21 @@ function Edit({
           label: "Link",
           value: card.link,
           onChange: val => updateCard(index, 'link', val)
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
+          marginBottom: 3
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+            label: "Target",
+            value: card.target,
+            options: [{
+              value: '',
+              label: 'Default'
+            }, {
+              value: '_blank',
+              label: 'Blank'
+            }],
+            onChange: val => updateCard(index, 'target', val)
+          })
         })]
       }, index))
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -157,6 +172,7 @@ function Edit({
               class: "competitor-review-rating-comparison-rating-link",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
                 href: card.link,
+                target: card.target || "_self",
                 class: "btn btn-lg nacked-btn",
                 children: ["See all Mailerlite alternatives", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
                   class: "btn-icon",
@@ -334,6 +350,7 @@ function save({
             class: "competitor-review-rating-comparison-rating-link",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
               href: card.link,
+              target: card.target || "_self",
               class: "btn btn-lg nacked-btn",
               children: ["See all Mailerlite alternatives", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
                 class: "btn-icon",

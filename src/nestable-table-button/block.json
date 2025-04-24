@@ -23,6 +23,10 @@
 		},
 		"link": {
 			"type":"string"
+		},
+		"target":{
+			"type":"string",
+			"default": ""
 		}
 	}
 }

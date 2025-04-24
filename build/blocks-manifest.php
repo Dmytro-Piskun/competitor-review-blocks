@@ -78,17 +78,20 @@ return array(
 					array(
 						'image1' => '',
 						'image2' => '',
-						'link' => ''
+						'link' => '',
+						'target' => ''
 					),
 					array(
 						'image1' => '',
 						'image2' => '',
-						'link' => ''
+						'link' => '',
+						'target' => ''
 					),
 					array(
 						'image1' => '',
 						'image2' => '',
-						'link' => ''
+						'link' => '',
+						'target' => ''
 					)
 				)
 			)
@@ -185,6 +188,10 @@ return array(
 			),
 			'link' => array(
 				'type' => 'string'
+			),
+			'target' => array(
+				'type' => 'string',
+				'default' => ''
 			)
 		)
 	),
@@ -341,7 +348,8 @@ return array(
 								'rating' => '4.5'
 							)
 						),
-						'link' => ''
+						'link' => '',
+						'target' => ''
 					),
 					array(
 						'image' => '',
@@ -360,7 +368,8 @@ return array(
 								'rating' => '4.5'
 							)
 						),
-						'link' => ''
+						'link' => '',
+						'target' => ''
 					)
 				)
 			)

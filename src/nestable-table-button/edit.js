@@ -3,17 +3,19 @@ import {
 	PanelBody,
 	TextControl,
 	PanelRow,
-	__experimentalSpacer as Spacer
+	__experimentalSpacer as Spacer,
+	SelectControl
 } from '@wordpress/components';
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
 
-	const { title, link } = attributes;
+	const { title, link, target } = attributes;
 
 	const blockProps = useBlockProps({
 		className: 'competitor-review-nestable-table-button btn btn-outline btn-rounded',
 		href: link,
+		target: target || "_self",
 	})
 
 	return (<>
@@ -25,6 +27,18 @@ export default function Edit({ attributes, setAttributes }) {
 						type="text"
 						value={link}
 						onChange={(val) => setAttributes({ link: val })}
+					/>
+				</PanelRow>
+				<Spacer marginBottom={4} />
+				<PanelRow>
+					<SelectControl
+						label="Target"
+						value={target}
+						options={[
+							{ value: '', label: 'Default' },
+							{ value: '_blank', label: 'Blank' },
+						]}
+						onChange={(val) => setAttributes({ target: val })}
 					/>
 				</PanelRow>
 			</PanelBody>

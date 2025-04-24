@@ -18,12 +18,27 @@
 	"viewScript": "file:./view.js",
 	"attributes": {
 		"cards": {
-      "type": "array",
-      "default": [
-        { "image1": "", "image2": "", "link": "" },
-        { "image1": "", "image2": "", "link": "" },
-        { "image1": "", "image2": "", "link": "" }
-      ]
-    }
+			"type": "array",
+			"default": [
+				{
+					"image1": "",
+					"image2": "",
+					"link": "",
+					"target": ""
+				},
+				{
+					"image1": "",
+					"image2": "",
+					"link": "",
+					"target": ""
+				},
+				{
+					"image1": "",
+					"image2": "",
+					"link": "",
+					"target": ""
+				}
+			]
+		}
 	}
 }

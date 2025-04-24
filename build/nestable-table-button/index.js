@@ -8,7 +8,7 @@
   \**********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"competitor-review-blocks/nestable-table-button","version":"0.1.0","title":"Nestable Table Button","category":"widgets","icon":"block-default","description":"Button for nestable table","example":{},"supports":{"html":false},"textdomain":"nestable-table-button","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","parent":["competitor-review-blocks/nestable-table-cell"],"attributes":{"title":{"type":"string"},"link":{"type":"string"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"competitor-review-blocks/nestable-table-button","version":"0.1.0","title":"Nestable Table Button","category":"widgets","icon":"block-default","description":"Button for nestable table","example":{},"supports":{"html":false},"textdomain":"nestable-table-button","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","parent":["competitor-review-blocks/nestable-table-cell"],"attributes":{"title":{"type":"string"},"link":{"type":"string"},"target":{"type":"string","default":""}}}');
 
 /***/ }),
 
@@ -39,18 +39,20 @@ function Edit({
 }) {
   const {
     title,
-    link
+    link,
+    target
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
     className: 'competitor-review-nestable-table-button btn btn-outline btn-rounded',
-    href: link
+    href: link,
+    target: target || "_self"
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
         title: "Button Settings",
         initialOpen: true,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
             label: "Link",
             type: "text",
@@ -59,7 +61,24 @@ function Edit({
               link: val
             })
           })
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
+          marginBottom: 4
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+            label: "Target",
+            value: target,
+            options: [{
+              value: '',
+              label: 'Default'
+            }, {
+              value: '_blank',
+              label: 'Blank'
+            }],
+            onChange: val => setAttributes({
+              target: val
+            })
+          })
+        })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
       ...blockProps,
@@ -164,11 +183,13 @@ function save({
 }) {
   const {
     title,
-    link
+    link,
+    target
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
     className: 'competitor-review-nestable-table-button btn btn-outline btn-rounded',
-    href: link
+    href: link,
+    target: target || "_self"
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
     ...blockProps,

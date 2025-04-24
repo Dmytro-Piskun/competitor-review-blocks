@@ -37,7 +37,8 @@
 							"rating": "4.5"
 						}
 					],
-					"link": ""
+					"link": "",
+					"target": ""
 				},
 				{
 					"image": "",
@@ -56,9 +57,9 @@
 							"rating": "4.5"
 						}
 					],
-					"link": ""
+					"link": "",
+					"target": ""
 				}
-				
 			]
 		}
 	}

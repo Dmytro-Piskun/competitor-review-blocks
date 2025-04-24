@@ -44,7 +44,7 @@ var SvgX = function SvgX(props) {
   \************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"competitor-review-blocks/comparisons","version":"0.1.0","title":"Comparisons","category":"widgets","icon":"block-default","description":"Comparisons block","example":{},"supports":{"html":false},"textdomain":"comparisons","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"cards":{"type":"array","default":[{"image1":"","image2":"","link":""},{"image1":"","image2":"","link":""},{"image1":"","image2":"","link":""}]}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"competitor-review-blocks/comparisons","version":"0.1.0","title":"Comparisons","category":"widgets","icon":"block-default","description":"Comparisons block","example":{},"supports":{"html":false},"textdomain":"comparisons","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"cards":{"type":"array","default":[{"image1":"","image2":"","link":"","target":""},{"image1":"","image2":"","link":"","target":""},{"image1":"","image2":"","link":"","target":""}]}}}');
 
 /***/ }),
 
@@ -147,6 +147,27 @@ function Edit({
               cards: newCards
             });
           }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
+          marginBottom: 3
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+            label: "Target",
+            value: card.target,
+            options: [{
+              value: '',
+              label: 'Default'
+            }, {
+              value: '_blank',
+              label: 'Blank'
+            }],
+            onChange: val => {
+              const newCards = [...cards];
+              newCards[index].target = val;
+              setAttributes({
+                cards: newCards
+              });
+            }
+          })
         })]
       }, index))
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -166,6 +187,7 @@ function Edit({
           className: "competitor-review-comparisons-item-link",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
             href: card.link || '#',
+            target: card.target || "_self",
             className: "btn btn-lg nacked-btn",
             children: ["See comparison", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
               className: "btn-icon",
@@ -308,6 +330,7 @@ function save({
         className: "competitor-review-comparisons-item-link",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
           href: card.link || '#',
+          target: card.target || "_self",
           className: "btn btn-lg nacked-btn",
           children: ["See comparison", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
             className: "btn-icon",
