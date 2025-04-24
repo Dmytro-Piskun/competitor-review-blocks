@@ -2,6 +2,7 @@ import { InspectorControls, MediaUpload, MediaUploadCheck, useBlockProps } from 
 import {
 	PanelBody, TextControl, PanelRow, Button,
 	SelectControl,
+	CheckboxControl,
 } from '@wordpress/components';
 import { __experimentalSpacer as Spacer } from '@wordpress/components';
 import { ReactComponent as XIcon } from '../../assets/X.svg'
@@ -88,6 +89,18 @@ export default function Edit({ attributes, setAttributes }) {
 								}}
 							/>
 						</PanelRow>
+						<Spacer marginBottom={3} />
+						<PanelRow>
+							<CheckboxControl
+								label="Nofollow"
+								checked={card.isNofollow}
+								onChange={(val) => {
+									const newCards = [...cards];
+									newCards[index].isNofollow = val;
+									setAttributes({ cards: newCards });
+								}}
+							/>
+						</PanelRow>
 					</PanelBody>
 				))}
 			</InspectorControls>
@@ -106,7 +119,7 @@ export default function Edit({ attributes, setAttributes }) {
 						</div>
 
 						<div className="competitor-review-comparisons-item-link">
-							<a href={card.link || '#'} target={card.target || "_self"} className="btn btn-lg nacked-btn">
+							<a href={card.link || '#'} target={card.target || "_self"} rel={card.isNofollow ? "nofollow" : ""} className="btn btn-lg nacked-btn">
 								See comparison
 								<span className="btn-icon">
 									<svg className="svg-icon" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">

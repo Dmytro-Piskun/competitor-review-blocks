@@ -24,19 +24,22 @@
           "image1": "",
           "image2": "",
           "link": "",
-          "target": ""
+          "target": "",
+          "isNofollow": false
         },
         {
           "image1": "",
           "image2": "",
           "link": "",
-          "target": ""
+          "target": "",
+          "isNofollow": false
         },
         {
           "image1": "",
           "image2": "",
           "link": "",
-          "target": ""
+          "target": "",
+          "isNofollow": false
         }
       ]
     }

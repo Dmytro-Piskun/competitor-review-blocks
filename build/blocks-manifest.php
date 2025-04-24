@@ -79,19 +79,22 @@ return array(
 						'image1' => '',
 						'image2' => '',
 						'link' => '',
-						'target' => ''
+						'target' => '',
+						'isNofollow' => false
 					),
 					array(
 						'image1' => '',
 						'image2' => '',
 						'link' => '',
-						'target' => ''
+						'target' => '',
+						'isNofollow' => false
 					),
 					array(
 						'image1' => '',
 						'image2' => '',
 						'link' => '',
-						'target' => ''
+						'target' => '',
+						'isNofollow' => false
 					)
 				)
 			)
@@ -192,6 +195,10 @@ return array(
 			'target' => array(
 				'type' => 'string',
 				'default' => ''
+			),
+			'isNofollow' => array(
+				'type' => 'boolean',
+				'default' => 'false'
 			)
 		)
 	),
@@ -349,7 +356,8 @@ return array(
 							)
 						),
 						'link' => '',
-						'target' => ''
+						'target' => '',
+						'isNofollow' => false
 					),
 					array(
 						'image' => '',
@@ -369,7 +377,8 @@ return array(
 							)
 						),
 						'link' => '',
-						'target' => ''
+						'target' => '',
+						'isNofollow' => false
 					)
 				)
 			)

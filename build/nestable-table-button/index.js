@@ -8,7 +8,7 @@
   \**********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"competitor-review-blocks/nestable-table-button","version":"0.1.0","title":"Nestable Table Button","category":"widgets","icon":"block-default","description":"Button for nestable table","example":{},"supports":{"html":false},"textdomain":"nestable-table-button","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","parent":["competitor-review-blocks/nestable-table-cell"],"attributes":{"title":{"type":"string"},"link":{"type":"string"},"target":{"type":"string","default":""}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"competitor-review-blocks/nestable-table-button","version":"0.1.0","title":"Nestable Table Button","category":"widgets","icon":"block-default","description":"Button for nestable table","example":{},"supports":{"html":false},"textdomain":"nestable-table-button","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","parent":["competitor-review-blocks/nestable-table-cell"],"attributes":{"title":{"type":"string"},"link":{"type":"string"},"target":{"type":"string","default":""},"isNofollow":{"type":"boolean","default":"false"}}}');
 
 /***/ }),
 
@@ -40,12 +40,14 @@ function Edit({
   const {
     title,
     link,
-    target
+    target,
+    isNofollow
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
     className: 'competitor-review-nestable-table-button btn btn-outline btn-rounded',
     href: link,
-    target: target || "_self"
+    target: target || "_self",
+    rel: isNofollow ? "nofollow" : ""
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
@@ -76,6 +78,16 @@ function Edit({
             }],
             onChange: val => setAttributes({
               target: val
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
+          marginBottom: 4
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
+            label: "Nofollow",
+            checked: isNofollow,
+            onChange: val => setAttributes({
+              isNofollow: val
             })
           })
         })]
@@ -184,12 +196,14 @@ function save({
   const {
     title,
     link,
-    target
+    target,
+    isNofollow
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
     className: 'competitor-review-nestable-table-button btn btn-outline btn-rounded',
     href: link,
-    target: target || "_self"
+    target: target || "_self",
+    rel: isNofollow ? "nofollow" : ""
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
     ...blockProps,

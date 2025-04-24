@@ -27,6 +27,10 @@
 		"target":{
 			"type":"string",
 			"default": ""
+		},
+		"isNofollow":{
+			"type":"boolean",
+			"default": "false"
 		}
 	}
 }

@@ -4,18 +4,20 @@ import {
 	TextControl,
 	PanelRow,
 	__experimentalSpacer as Spacer,
-	SelectControl
+	SelectControl,
+	CheckboxControl
 } from '@wordpress/components';
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
 
-	const { title, link, target } = attributes;
+	const { title, link, target, isNofollow } = attributes;
 
 	const blockProps = useBlockProps({
 		className: 'competitor-review-nestable-table-button btn btn-outline btn-rounded',
 		href: link,
 		target: target || "_self",
+		rel: isNofollow ? "nofollow" : ""
 	})
 
 	return (<>
@@ -39,6 +41,14 @@ export default function Edit({ attributes, setAttributes }) {
 							{ value: '_blank', label: 'Blank' },
 						]}
 						onChange={(val) => setAttributes({ target: val })}
+					/>
+				</PanelRow>
+				<Spacer marginBottom={4} />
+				<PanelRow>
+					<CheckboxControl
+						label="Nofollow"
+						checked={isNofollow}
+						onChange={(val) => setAttributes({ isNofollow: val })}
 					/>
 				</PanelRow>
 			</PanelBody>

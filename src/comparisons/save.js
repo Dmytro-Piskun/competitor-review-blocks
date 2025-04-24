@@ -25,7 +25,7 @@ export default function save({ attributes }) {
 					</div>
 
 					<div className="competitor-review-comparisons-item-link">
-						<a href={card.link || '#'} target={card.target || "_self"} className="btn btn-lg nacked-btn">
+						<a href={card.link || '#'} target={card.target || "_self"} rel={card.isNofollow ? "nofollow" : ""} className="btn btn-lg nacked-btn">
 							See comparison
 							<span className="btn-icon">
 								<svg className="svg-icon" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">

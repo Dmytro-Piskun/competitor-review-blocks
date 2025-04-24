@@ -5,6 +5,7 @@ import {
 import {
 	PanelBody, TextControl, PanelRow, Button,
 	SelectControl,
+	CheckboxControl,
 } from '@wordpress/components';
 import { __experimentalSpacer as Spacer } from '@wordpress/components';
 import './editor.scss';
@@ -104,7 +105,16 @@ export default function Edit({ attributes, setAttributes }) {
 								onChange={(val) => updateCard(index, 'target', val)}
 							/>
 						</PanelRow>
+						<Spacer marginBottom={3} />
+						<PanelRow>
+							<CheckboxControl
+								label="Nofollow"
+								checked={card.isNofollow}
+								onChange={(val) => updateCard(index, 'isNofollow', val)}
+							/>
+						</PanelRow>
 					</PanelBody>
+
 				))}
 			</InspectorControls>
 
@@ -152,7 +162,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 								</div>
 								<div class="competitor-review-rating-comparison-rating-link">
-									<a href={card.link} target={card.target || "_self"} class="btn btn-lg nacked-btn">
+									<a href={card.link} target={card.target || "_self"} rel={card.isNofollow ? "nofollow" : ""} class="btn btn-lg nacked-btn">
 										See all Mailerlite alternatives
 										<span class="btn-icon">
 											<svg class="svg-icon" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
