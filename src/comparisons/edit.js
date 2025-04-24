@@ -3,6 +3,8 @@ import {
 	PanelBody, TextControl, PanelRow, Button,
 } from '@wordpress/components';
 import { __experimentalSpacer as Spacer } from '@wordpress/components';
+import { ReactComponent as XIcon } from '../../assets/X.svg'
+
 
 import './editor.scss';
 
@@ -81,7 +83,7 @@ export default function Edit({ attributes, setAttributes }) {
 						<div className='competitor-review-comparisons-item-header'>
 
 							<img src={card.image1 || ''} alt={`Logo 1`} />
-							<span>X</span>
+							<XIcon/>
 							<img src={card.image2 || ''} alt={`Logo 2`} />
 
 						</div>

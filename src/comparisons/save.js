@@ -1,6 +1,6 @@
 
 import { useBlockProps } from '@wordpress/block-editor';
-
+import { ReactComponent as XIcon } from '../../assets/X.svg'
 
 export default function save({ attributes }) {
 
@@ -19,7 +19,7 @@ export default function save({ attributes }) {
 						<div className='competitor-review-comparisons-item-header'>
 
 							<img src={card.image1 || ""} alt={`Logo 1`} />
-							<span>X</span>
+							<XIcon/>
 							<img src={card.image2 || ""} alt={`Logo 2`} />
 
 						</div>
