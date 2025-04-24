@@ -26,6 +26,12 @@
   color: #0A083B;
   line-height: 26px;
 }
+.competitor-review-table-wrapper .competitor-review-table-row-cell--list-red ul li::before {
+  background-color: #ED1E24;
+}
+.competitor-review-table-wrapper .competitor-review-table-row-cell--list-green ul li::before {
+  background-color: #5ABA85;
+}
 .competitor-review-table-wrapper .competitor-review-table-row:nth-child(odd) {
   background-color: rgba(204, 204, 204, 0.1019607843);
 }
@@ -75,7 +81,7 @@
   margin-top: 0px;
 }
 .competitor-review-table-wrapper .competitor-review-table ul li::before {
-  margin-top: 8px;
+  margin-top: 11px;
 }
 .competitor-review-table-wrapper .competitor-review-table .competitor-review-pros-and-cons-heading {
   font-size: 16px;

@@ -210,6 +210,11 @@ return array(
 		'viewScript' => 'file:./view.js',
 		'parent' => array(
 			'competitor-review-blocks/nestable-table-row'
+		),
+		'attributes' => array(
+			'listMarkerColor' => array(
+				'type' => 'string'
+			)
 		)
 	),
 	'nestable-table-row' => array(

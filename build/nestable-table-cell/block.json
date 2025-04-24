@@ -18,5 +18,10 @@
   "viewScript": "file:./view.js",
   "parent": [
     "competitor-review-blocks/nestable-table-row"
-  ]
+  ],
+  "attributes": {
+    "listMarkerColor": {
+      "type": "string"
+    }
+  }
 }

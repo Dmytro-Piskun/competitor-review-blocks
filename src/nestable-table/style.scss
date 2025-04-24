@@ -29,6 +29,17 @@
 
 				}
 
+				&--list-red {
+					ul li::before {
+						background-color: #ED1E24;
+					}
+				}
+				&--list-green {
+					ul li::before {
+						background-color: #5ABA85;
+					}
+				}
+
 			}
 
 			&:nth-child(odd) {
@@ -103,7 +114,7 @@
 				margin-top: 0px;
 
 				&::before {
-					margin-top: 8px;
+					margin-top: 11px;
 				}
 			}
 		}
